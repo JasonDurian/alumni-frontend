@@ -1,0 +1,34 @@
+.body_bg {
+  margin: 10px 10px 70px 10px;
+}
+
+.comment_contain {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.comment_content {
+  /*width: 300px;*/
+  /*word-break:break-all;*/
+  color: #666;
+}
+
+.comment_btn {
+  width: 80%;
+  height: 36px;
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 14px;
+}
+
+.comment_tip {
+  float: right;
+  margin-right: 10%;
+  font-size: 8px;
+  color: #c0c0c0;
+}
+
+.comment_edit {
+  margin-left: 75%;
+}
