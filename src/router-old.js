@@ -1,13 +1,13 @@
 import React from 'react';
 import { Router, Route, IndexRoute  } from 'dva/router';
-import IndexPage from './routes/indexpage';
-import Member from './routes/member/member'
-import Contacts from './routes/contact/contact'
-import Certify from './routes/member/certify'
-import Register from './routes/member/register'
-import CityPicker from './routes/normal/citypicker'
-import UserList from './routes/contact/userlist'
-import Navbar from './routes/navbar'
+import IndexPage from './routes/ui/indexpage';
+import Member from './routes/ui/member/member'
+import Contacts from './routes/ui/contact/contact'
+import Certify from './routes/ui/member/certify'
+import Register from './routes/ui/member/register'
+import CityPicker from './routes/ui/normal/citypicker'
+import UserList from './routes/ui/contact/userlist'
+import Navbar from './routes/ui/navbar'
 
 const RouterConfig = ({ history, app }) => (
   <Router history={history}>

@@ -1,8 +1,9 @@
-export const PAGE_SIZE = 15;
-export const SQUARE_PAGE = 10;
-export const DEFAULT_URL = '/tp/member';
-export const CERTIFY_URL = '/tp/certify';
-export const CONTACT_URL = '/tp/contact';
-export const COMMENT_URL = '/tp/comment';
-export const SQUARE_URL  = '/tp/square';
+const apiPrefix = 'http://api.jasonfj.com/api/v1'
+export const PAGE_SIZE   = 15
+export const SQUARE_PAGE = 10
+export const DEFAULT_URL = `${apiPrefix}/member`
+export const CERTIFY_URL = `${apiPrefix}/certify`
+export const CONTACT_URL = `${apiPrefix}/contact`
+export const COMMENT_URL = `${apiPrefix}/comment`
+export const SQUARE_URL  = `${apiPrefix}/square`
 // export const DEFAULT_URL = 'http://jsonplaceholder.typicode.com/users';

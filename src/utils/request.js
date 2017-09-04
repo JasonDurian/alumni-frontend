@@ -27,6 +27,28 @@ const headerHandler = (tokenInfo, values = {
   {...tokenInfo, ...values}
 )
 
+const optionsHandler = (options, values = {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json'
+}) => {
+  let auth = {}
+  if (!!options.needAuth) {
+    delete options.needAuth
+    auth = {
+      credentials: 'include',
+      headers: {
+        ...values,
+        authKey: sessionStorage.getItem('authKey')
+      }
+    }
+  }else {
+    auth = {
+      headers: values
+    }
+  }
+  return {...options, ...auth}
+}
+
 /**
  * Requests a URL, returning a promise.
  *
@@ -34,18 +56,13 @@ const headerHandler = (tokenInfo, values = {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-/*export default function request(url, options) {
- return fetch(url, options)
- .then(checkStatus)
- .then(parseJSON)
- .then(data => ({ data }))
- .catch(err => ({ err }));
- }*/
 
 export default async function request(url, options = {}) {
 
-  const newHeader = headerHandler(!!options.headers ? options.headers : {})
-  const newOption = {...options, headers: newHeader}
+  // const newHeader = headerHandler(!!options.headers ? options.headers : {})
+  // const newOption = {...options, headers: newHeader}
+
+  const newOption = optionsHandler(options)
   const response = await fetch(url, newOption);
 
   checkStatus(response);
@@ -54,15 +71,8 @@ export default async function request(url, options = {}) {
 
   parseErrorMessage(data)
 
-  const ret = {
+  return {
     data,
     headers: {},
   };
-
-  options.hasOwnProperty('method') ||
-  (ret.headers['x-total-count'] = response.headers.get('x-total-count') ? response.headers.get('x-total-count') : data.data.dataCount)
-
-  console.log(ret)
-
-  return ret;
 }
