@@ -1,0 +1,31 @@
+.city_box h3 {
+  background: none repeat scroll 0 0 #F8F8F8;
+  border-bottom: 1px solid #E3E3E3;
+  border-top: 1px solid #E3E3E3;
+  color: #3F4358;
+  font-size: 16px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 10px;
+}
+
+.city_box a {
+  color: #000;
+}
+
+.local_city {
+  color: #3F4358;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+.letters_lst li {
+  color: #394B59;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 16.6667%;
+}

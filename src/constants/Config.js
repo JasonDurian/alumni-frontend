@@ -1,4 +1,6 @@
 const apiPrefix = 'http://api.jasonfj.com/api/v1'
+// const apiPrefix = 'http://api.alumni.app/api/v1'
+// const apiPrefix = '/tp/api/v1'
 export const PAGE_SIZE   = 15
 export const SQUARE_PAGE = 10
 export const DEFAULT_URL = `${apiPrefix}/member`

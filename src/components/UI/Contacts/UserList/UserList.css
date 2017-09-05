@@ -1,0 +1,14 @@
+.bg_color {
+  min-height: 100px;
+  background-color: #f7f7f7;
+}
+
+.pagination {
+  float: right;
+  margin-top: 10px;
+}
+
+.no_data {
+  padding-top: 25px;
+  text-align: center;
+}

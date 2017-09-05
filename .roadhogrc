@@ -1,7 +1,7 @@
 {
   "entry": "src/index.js",
   "disableCSSModules": false,
-  "publicPath": "/dist/",
+  "publicPath": "/",
   "theme": {
     "@primary-color": "#A24824",
     "@link-color": "#A24824"
@@ -13,7 +13,7 @@
   ],
   "proxy": {
     "/tp": {
-      "target": "http://localhost/alumni/",
+      "target": "http://api.alumni.app/",
       "changeOrigin": true,
       "pathRewrite": { "^/tp" : "" }
     }

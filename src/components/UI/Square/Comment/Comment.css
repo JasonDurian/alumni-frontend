@@ -1,0 +1,23 @@
+.bg_body {
+  padding-bottom: 70px;
+}
+
+.title_icon {
+  margin-bottom: 5px;
+  font-size: 1.3em;
+}
+
+.mention {
+  margin-top: 1em;
+  color: #a24824;
+  font-size: 1.1em;
+}
+
+.release_btn {
+  width: 80%;
+  height: 36px;
+  margin-top: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 14px;
+}
