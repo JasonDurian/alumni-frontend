@@ -2,6 +2,7 @@
   "entry": "src/index.js",
   "disableCSSModules": false,
   "publicPath": "/",
+  "outputPath": "./alumni_frontend",
   "theme": {
     "@primary-color": "#A24824",
     "@link-color": "#A24824"

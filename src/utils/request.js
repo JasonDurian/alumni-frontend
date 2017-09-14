@@ -24,29 +24,33 @@ const headerHandler = (tokenInfo, values = {
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 }) => (
-  {...tokenInfo, ...values}
+  { ...tokenInfo, ...values }
 )
 
 const optionsHandler = (options, values = {
   'Accept': 'application/json',
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json',
+  // 'Content-Type': 'application/x-www-form-urlencoded'
 }) => {
   let auth = {}
+
+  const token = localStorage.getItem('id_token') || null
   if (!!options.needAuth) {
     delete options.needAuth
     auth = {
       credentials: 'include',
       headers: {
         ...values,
-        authKey: sessionStorage.getItem('authKey')
-      }
-    }
-  }else {
+        // authKey: sessionStorage.getItem('authKey'),
+        Authorization: `Bearer ${token}`,
+      },
+    };
+  } else {
     auth = {
-      headers: values
-    }
+      headers: values,
+    };
   }
-  return {...options, ...auth}
+  return { ...options, ...auth };
 }
 
 /**
@@ -70,6 +74,10 @@ export default async function request(url, options = {}) {
   const data = await response.json();
 
   parseErrorMessage(data)
+
+  if (response.headers.get('id_token')) {
+    localStorage.setItem('id_token', response.headers.get('id_token'))
+  }
 
   return {
     data,

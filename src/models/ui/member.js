@@ -22,8 +22,8 @@ export default {
 
     *login({ payload: values }, { call, put }) {
       const { data } = yield call(usersService.login, values);
-      sessionStorage.setItem('authKey', data.data.authKey)
-      // sessionStorage.setItem('sessionId', data.data.sessionId)
+      // sessionStorage.setItem('authKey', data.data.authKey)
+      localStorage.setItem('id_token', data.data.jwtSecret)
       yield put({
         type: 'save',
         payload: {
